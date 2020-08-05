@@ -31,6 +31,29 @@ import sys
 import calendar
 from datetime import datetime
 
+# print([i for i in sys.argv])
+arg = sys.argv
+cal = calendar.TextCalendar(calendar.SUNDAY)
+string = ''
+if len(arg) == 1:
+  today = datetime.today()
+  year = today.year
+  month = today.month
+  string = cal.formatmonth(year,month)
+
+elif len(arg) == 2:
+  year = 2020
+  month = int(arg[1])
+  string = cal.formatmonth(year,month)
+elif len(arg) == 3:
+  string = cal.formatmonth(int(arg[2]),int(arg[1]))
+else:
+  print('The command should in an acceptable format. e.g. 14_cal.py MM YYYY, or 14_cal.py MM or 14_cal.py')
+# string = cal.formatmonth(2025,1)
+print(string)
+
+
+
 
 
 
